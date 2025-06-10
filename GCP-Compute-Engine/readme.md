@@ -1,82 +1,99 @@
-# GCP Compute Engine Terraform Infrastructure
+readme:
+  filename: README.md
+  content: |
+    # 🚀 GCP Compute Engine Infrastructure with Terraform
 
-This Terraform project provisions a complete Google Cloud Platform (GCP) infrastructure including:
+    This project provisions a full Google Cloud Platform (GCP) infrastructure using **Terraform**. It includes:
 
-- A custom Virtual Private Cloud (VPC)
-- Subnet and firewall rules (SSH access)
-- A service account with logging and monitoring roles
-- A Compute Engine virtual machine running Debian with Nginx
+    - A custom Virtual Private Cloud (VPC)
+    - A subnet and firewall rule allowing SSH
+    - A service account with basic IAM roles
+    - A Compute Engine VM running **Debian** with **Nginx** installed via startup script
 
+    ---
 
-## 🚀 Getting Started
+    ## 📁 Project Structure
 
-### 1. Prerequisites
+    ```
+    .
+    ├── main.tf                # Root configuration
+    ├── variables.tf           # Input variables
+    ├── outputs.tf             # Output definitions
+    ├── terraform.tfvars       # Variable values (e.g., project_id)
+    └── modules/
+        ├── compute/           # VM and startup script
+        ├── iam/               # Service account + IAM roles
+        └── network/           # VPC, subnet, firewall
+    ```
 
-- [Terraform](https://developer.hashicorp.com/terraform/downloads)
-- Google Cloud CLI (`gcloud`)
-- An active GCP project with billing enabled
-- Application Default Credentials:
+    ---
 
-```bash
-gcloud auth application-default login
-2. Configure Variables
-Edit terraform.tfvars with your project details:
+    ## ✅ Requirements
 
-hcl
-Copy
-Edit
-project_id = "your-gcp-project-id"
-region     = "us-central1"
-zone       = "us-central1-a"
-3. Initialize Terraform
-bash
-Copy
-Edit
-terraform init
-4. Apply the Infrastructure
-bash
-Copy
-Edit
-terraform apply
-Confirm the plan to create the infrastructure.
+    - [Terraform](https://www.terraform.io/downloads.html)
+    - [Google Cloud SDK (gcloud)](https://cloud.google.com/sdk)
+    - A GCP project with billing enabled
+    - Application Default Credentials:
 
-💡 Features
-Modular design: Code is split into reusable modules (network, iam, compute)
+    ```bash
+    gcloud auth application-default login
+    ```
 
-Service account: Includes minimal IAM roles for monitoring/logging
+    ---
 
-Secure access: SSH allowed from all IPs (adjustable)
+    ## ⚙️ Configuration
 
-Startup script: Installs Nginx automatically
+    Edit `terraform.tfvars` with your project information:
 
-🔧 Customization
-You can modify these aspects easily:
+    ```hcl
+    project_id = "your-gcp-project-id"
+    region     = "us-central1"
+    zone       = "us-central1-a"
+    ```
 
-VM specs: Change machine_type in main.tf
+    ---
 
-Image: Edit initialize_params.image in compute/main.tf
+    ## 🧪 Usage
 
-Firewall rules: Update network/main.tf to restrict access
+    Initialize and apply:
 
-IAM roles: Customize in iam/main.tf as needed
+    ```bash
+    terraform init
+    terraform apply
+    ```
 
-🧹 Cleanup
-To remove all resources created:
+    This will:
 
-bash
-Copy
-Edit
-terraform destroy
-📝 License
-This project is open-source and available under the MIT License.
+    - Create the VPC and subnet
+    - Set up SSH access
+    - Provision a service account
+    - Deploy a VM with Nginx installed
 
-📬 Questions?
-Feel free to open an issue or contact the project maintainer.
+    ---
 
-yaml
-Copy
-Edit
+    ## 🔄 Customization
 
----
+    You can modify the infrastructure easily:
 
-Let me know if you’d like this README rendered with badges, contributor sections, or converted to `.md` and zipped with your code.
+    | Component     | How to change                                       |
+    |---------------|-----------------------------------------------------|
+    | VM size       | Edit `machine_type` in `main.tf`                    |
+    | Image         | Change boot disk image in `compute/main.tf`         |
+    | IAM roles     | Add/edit roles in `iam/main.tf`                     |
+    | Firewall rule | Restrict `source_ranges` in `network/main.tf`       |
+
+    ---
+
+    ## 🧹 Cleanup
+
+    To destroy all created resources:
+
+    ```bash
+    terraform destroy
+    ```
+
+    ---
+
+    ## 📄 License
+
+    This project is provided under the [MIT License](LICENSE).
