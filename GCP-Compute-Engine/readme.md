@@ -7,25 +7,6 @@ This Terraform project provisions a complete Google Cloud Platform (GCP) infrast
 - A service account with logging and monitoring roles
 - A Compute Engine virtual machine running Debian with Nginx
 
----
-
-## 📁 Project Structure
-
-.
-├── main.tf # Root module: calls network, IAM, and compute modules
-├── variables.tf # Global input variables
-├── outputs.tf # Outputs from root module
-├── terraform.tfvars # Variable values (project_id, region, etc.)
-└── modules/
-├── network/ # VPC, Subnet, and Firewall rules
-├── iam/ # Service account and IAM role bindings
-└── compute/ # Compute Engine instance with startup script
-
-yaml
-Copy
-Edit
-
----
 
 ## 🚀 Getting Started
 
