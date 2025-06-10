@@ -1,6 +1,4 @@
-readme:
-  filename: README.md
-  content: |
+
     # 🚀 GCP Compute Engine Infrastructure with Terraform
 
     This project provisions a full Google Cloud Platform (GCP) infrastructure using **Terraform**. It includes:
