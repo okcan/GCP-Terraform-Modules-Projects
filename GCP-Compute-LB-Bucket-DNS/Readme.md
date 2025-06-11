@@ -6,8 +6,6 @@ This repository contains a modular Terraform project to deploy a full infrastruc
 
 ## 📊 Architecture Diagram
 
-![Architecture Diagram](A_comprehensive_README_file_section_for_a_Terrafor.png)
-
 This diagram outlines how users interact with GCP services including DNS, load balancing, autoscaling Compute Engine instances, Cloud SQL, and Cloud Storage.
 
 ---
