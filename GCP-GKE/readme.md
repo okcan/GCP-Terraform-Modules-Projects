@@ -108,4 +108,4 @@ terraform destroy
 
 ## 📄 License
 
-MIT License © 2025 Polygon Labs
+MIT License 
