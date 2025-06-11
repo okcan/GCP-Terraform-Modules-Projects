@@ -89,9 +89,5 @@ terraform apply -var-file="terraform.tfvars"
 ## 🙋 Contributing
 PRs and suggestions are welcome! If you’ve found a bug or want to improve a module, feel free to open an issue or submit a pull request.
 
----
-
-## ✨ Maintained by
-[Your Name or Team]
 
 > Built with ❤️ for Terraformers deploying scalable GCP infrastructure.
