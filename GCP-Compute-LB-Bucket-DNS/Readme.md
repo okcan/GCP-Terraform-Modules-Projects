@@ -95,4 +95,4 @@ Feel free to open issues or PRs for improvements or bug fixes.
 ---
 
 ## 🧑‍💻 Maintainer
-This project was generated with ❤️ by [your-name].
+This project was generated with ❤️ 
